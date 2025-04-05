@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import LogoImg from '@/assets/logo.png';
+import NavLink from './NavLink';
 
 const Header = () => {
 	return (
 		<>
-			<div className="header-background">
+			<div className="absolute top-0 left-0 -z-[1] h-[320px] w-full">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
 					<defs>
 						<linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -20,6 +21,7 @@ const Header = () => {
 					></path>
 				</svg>
 			</div>
+
 			<header className="fixed top-0 flex w-full items-center justify-center px-[10px] py-[10px]">
 				<div className="container flex w-full justify-between">
 					<Link href="/" className="flex items-center gap-[10px] text-2xl font-bold">
@@ -29,17 +31,13 @@ const Header = () => {
 					</Link>
 
 					<nav className="flex items-center">
-						<ul className="flex gap-[20px] text-[16px] font-bold">
+						<ul className="flex gap-[20px] text-[20px] font-bold">
 							<li>
-								<Link href="/meals" className="duration-200 hover:text-yellow-500">
-									Meals
-								</Link>
+								<NavLink href="/meals">Explore Meals</NavLink>
 							</li>
 
 							<li>
-								<Link href="/community" className="duration-200 hover:text-yellow-500">
-									Community
-								</Link>
+								<NavLink href="/community">Community</NavLink>
 							</li>
 						</ul>
 					</nav>

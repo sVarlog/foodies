@@ -12,7 +12,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
 			<body>
 				<Header />
 
-				{children}
+				<div className="container mx-auto mt-[250px]">{children}</div>
 			</body>
 		</html>
 	);

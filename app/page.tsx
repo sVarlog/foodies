@@ -1,13 +1,16 @@
+import ImageSlideshow from '@/components/images/Slideshow';
 import Link from 'next/link';
 
 const Home = () => {
 	return (
 		<>
-			<header className="flex w-full gap-[20px]">
-				<div className="w-[50%]"></div>
+			<header className="flex w-full items-center gap-[20px]">
+				<div className="w-[50%]">
+					<ImageSlideshow />
+				</div>
 
 				<div className="w-[50%]">
-					<div className="">
+					<div className="flex flex-col">
 						<h1 className="text-yellow-500 uppercase">NextLevel Food for NextLevel Foodies</h1>
 						<p className="py-[20px]">Taste & share food from all over the world.</p>
 					</div>
