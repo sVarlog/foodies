@@ -1,3 +1,4 @@
+import Header from '@/components/Header';
 import './globals.css';
 
 export const metadata = {
@@ -24,6 +25,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
 						></path>
 					</svg>
 				</div>
+
+				<Header />
 
 				{children}
 			</body>
