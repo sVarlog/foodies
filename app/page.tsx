@@ -2,21 +2,59 @@ import Link from 'next/link';
 
 const Home = () => {
 	return (
-		<main>
-			<h1>Time to get started!</h1>
+		<>
+			<header className="flex w-full gap-[20px]">
+				<div className="w-[50%]"></div>
 
-			<p>
-				<Link href="/meals">Meals</Link>
-			</p>
+				<div className="w-[50%]">
+					<div className="">
+						<h1 className="text-yellow-500 uppercase">NextLevel Food for NextLevel Foodies</h1>
+						<p className="py-[20px]">Taste & share food from all over the world.</p>
+					</div>
 
-			<p>
-				<Link href="/meals/share">Share a Meal</Link>
-			</p>
+					<div className="flex items-center gap-[20px]">
+						<Link href="/community" className="text-yellow-500">
+							Join the Community
+						</Link>
 
-			<p>
-				<Link href="/community">Community</Link>
-			</p>
-		</main>
+						<Link
+							href="/meals"
+							className="rounded-[6px] bg-yellow-500 px-[20px] py-[10px] font-bold text-white"
+						>
+							Explore Meals
+						</Link>
+					</div>
+				</div>
+			</header>
+
+			<main>
+				<section className="mb-[40px] flex flex-col gap-[40px]">
+					<h2 className="text-[40px] font-bold">How it works</h2>
+
+					<p className="text-[14px]">
+						NextLevel Food is a platform for foodies to share their favorite recipes with the world.
+						It&apos;s a place to discover new dishes, and to connect with other food lovers.
+					</p>
+
+					<p className="text-[14px]">
+						NextLevel Food is a place to discover new dishes, and to connect with otehr food lovers.
+					</p>
+				</section>
+
+				<section className="mb-[40px] flex flex-col gap-[40px]">
+					<h2 className="text-[40px] font-bold">Why NextLevel Food?</h2>
+
+					<p className="text-[14px]">
+						NextLevel Food is a platform for foodies to share their favorite recipes with the world.
+						It&apos;s a place to discover new dishes, and to connect with other food lovers.
+					</p>
+
+					<p className="text-[14px]">
+						NextLevel Food is a place to discover new dishes, and to connect with otehr food lovers.
+					</p>
+				</section>
+			</main>
+		</>
 	);
 };
 
