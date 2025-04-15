@@ -13,10 +13,7 @@ const NavLink = ({ href, children }: NavLinkProps) => {
 	const path = usePathname();
 
 	return (
-		<Link
-			href={href}
-			className={clsx('duration-200 hover:text-yellow-400', path === '/meals' && 'text-yellow-500')}
-		>
+		<Link href={href} className={clsx('duration-200 hover:text-yellow-400', path === href && 'text-yellow-500')}>
 			{children}
 		</Link>
 	);

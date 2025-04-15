@@ -11,12 +11,15 @@ interface MealItemProps {
 
 const MealItem = ({ title, slug, image, summary, creator }: MealItemProps) => {
 	return (
-		<article className="flex flex-col justify-between rounded-[4px] bg-gradient-to-r from-[#2c1e19] to-[#25200f] p-[1rem] text-[#ddd6cb] shadow-sm transition-all duration-300 ease-in-out">
-			<header>
-				<Image src={image} alt={title} className="object-cover" fill />
+		<article className="flex flex-col justify-between rounded-[4px] bg-gradient-to-r from-[#2c1e19] to-[#25200f] p-[1rem] text-start text-[#ddd6cb] shadow-sm transition-all duration-300 ease-in-out">
+			<header className="w-full">
+				<div className="relative h-[400px] w-full">
+					<Image src={image} alt={title} fill />
+				</div>
 
-				<div className="px-[1rem] pt-[0.5rem]">
-					<h2 className="m-0 text-[1.5rem]">{title}</h2>
+				<div className="px-[1rem] pt-[2rem]">
+					<h2 className="m-0 text-[1.5rem] font-bold">{title}</h2>
+
 					<p className="text-[0.75rem] text-[#cfa69b]">by {creator}</p>
 				</div>
 			</header>
