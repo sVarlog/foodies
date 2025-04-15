@@ -1,5 +1,6 @@
 import { getMealBySlug } from '@/api/meals';
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 
 interface MealPageProps {
 	params: {
@@ -11,17 +12,16 @@ const MealPage = async ({ params }: MealPageProps) => {
 	const meal = await getMealBySlug(params.slug);
 
 	if (!meal) {
-		return <p>Meal not found</p>;
+		notFound();
 	}
 
 	const getTrimedInstructions = (instructions: string) => {
 		const trimmedInstructions = instructions.split('\n');
 
-		// Remove empty strings and trim each instruction
 		const filteredInstructions = trimmedInstructions
 			.map((instruction) => instruction.trim())
 			.filter((instruction) => instruction !== '');
-		// Join the instructions with line breaks
+
 		const formattedInstructions = filteredInstructions.join('\n');
 
 		return (
