@@ -35,7 +35,8 @@ const saveMeal = async (meal: Meal): Promise<void> => {
 			meal.instructions = xss(meal.instructions);
 
 			const extension = meal.image.name.split('.').pop();
-			const fileName = `${meal.slug}.${new Date().toISOString()}.${extension}`;
+
+			const fileName = `${meal.slug}.${new Date().getTime()}.${extension}`;
 
 			const stream = fs.createWriteStream(`public/images/${fileName}`);
 			const bufferedImage = await meal.image.arrayBuffer();
@@ -47,7 +48,7 @@ const saveMeal = async (meal: Meal): Promise<void> => {
 				}
 			});
 
-			meal.image = `/images/${fileName}`;
+			const image = `/images/${fileName}`;
 
 			db.prepare(
 				`
@@ -63,7 +64,7 @@ const saveMeal = async (meal: Meal): Promise<void> => {
 					@slug
 				)
 			`
-			).run(meal);
+			).run({ ...meal, image });
 
 			resolve();
 		}, 200);

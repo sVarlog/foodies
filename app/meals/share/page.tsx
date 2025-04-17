@@ -1,6 +1,7 @@
 import { shareMeal } from '@/api/actions';
 import FormElement from '@/components/meals/FormElement';
 import ImagePicker from '@/components/meals/ImagePicker';
+import MealsFormSubmit from '@/components/meals/MealsFormSubmit';
 
 const MealsSharePage = () => {
 	return (
@@ -28,14 +29,9 @@ const MealsSharePage = () => {
 
 						<ImagePicker name="image" label="Image" />
 
-						<p className="text-right">
-							<button
-								type="submit"
-								className="cursor-pointer rounded-[6px] border-0 bg-yellow-500 px-[2rem] py-[1rem] font-bold text-white shadow-md"
-							>
-								Share Meal
-							</button>
-						</p>
+						<div className="text-right">
+							<MealsFormSubmit />
+						</div>
 					</div>
 				</form>
 			</main>
